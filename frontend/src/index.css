@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+/* CSS Variables for theming */
+:root[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f3f4f6;
+  --bg-tertiary: #e5e7eb;
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --text-tertiary: #6b7280;
+  --border-color: #e5e7eb;
+  --hover-bg: #f3f4f6;
+  --active-bg: #dbeafe;
+  --active-text: #1d4ed8;
+  --button-primary: #3b82f6;
+  --button-primary-hover: #2563eb;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --modal-overlay: rgba(0, 0, 0, 0.5);
+}
+
+:root[data-theme="dark"] {
+  --bg-primary: #1e1e1e;
+  --bg-secondary: #2d2d2d;
+  --bg-tertiary: #3a3a3a;
+  --text-primary: #e5e7eb;
+  --text-secondary: #d1d5db;
+  --text-tertiary: #9ca3af;
+  --border-color: #3a3a3a;
+  --hover-bg: #2d2d2d;
+  --active-bg: #1e3a8a;
+  --active-text: #93c5fd;
+  --button-primary: #3b82f6;
+  --button-primary-hover: #2563eb;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --modal-overlay: rgba(0, 0, 0, 0.7);
+}
+
+/* Default to dark theme */
+:root {
+  --bg-primary: #1e1e1e;
+  --bg-secondary: #2d2d2d;
+  --bg-tertiary: #3a3a3a;
+  --text-primary: #e5e7eb;
+  --text-secondary: #d1d5db;
+  --text-tertiary: #9ca3af;
+  --border-color: #3a3a3a;
+  --hover-bg: #2d2d2d;
+  --active-bg: #1e3a8a;
+  --active-text: #93c5fd;
+  --button-primary: #3b82f6;
+  --button-primary-hover: #2563eb;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --modal-overlay: rgba(0, 0, 0, 0.7);
+}
+
+body {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+/* Global responsive utilities */
+@media (max-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+/* Ensure modals are responsive */
+@media (max-width: 640px) {
+  .modal-overlay {
+    padding: 0;
+  }
+}
+
+/* Touch-friendly hit areas */
+@media (hover: none) and (pointer: coarse) {
+  button,
+  a,
+  .clickable {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}

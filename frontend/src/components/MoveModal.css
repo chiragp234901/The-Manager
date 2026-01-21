@@ -1,0 +1,272 @@
+/* frontend/src/components/MoveModal.css */
+.move-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.move-modal {
+  background: var(--bg-primary);
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.move-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.move-modal-header h2 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.move-modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.move-modal-close:hover {
+  background: var(--hover-bg);
+  color: var(--text-primary);
+}
+
+.move-modal-body {
+  padding: 20px;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.move-breadcrumb {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: var(--bg-secondary);
+  border-radius: 4px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.breadcrumb-item {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.breadcrumb-item:hover {
+  background: var(--hover-bg);
+}
+
+.breadcrumb-separator {
+  margin: 0 5px;
+  color: var(--text-secondary);
+}
+
+.move-folder-list {
+  flex: 1;
+  overflow-y: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background: var(--bg-secondary);
+}
+
+.move-folder-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.move-folder-item:last-child {
+  border-bottom: none;
+}
+
+.move-folder-item:hover {
+  background: var(--hover-bg);
+}
+
+.folder-icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.folder-name {
+  flex: 1;
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.folder-enter-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 20px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.folder-enter-btn:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.move-loading,
+.move-empty {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.move-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.btn-cancel,
+.btn-move {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-cancel {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.btn-cancel:hover {
+  background: var(--hover-bg);
+}
+
+.btn-move {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.btn-move:hover {
+  background: var(--hover-bg);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .move-modal {
+    width: 95%;
+    max-width: none;
+    max-height: 85vh;
+  }
+
+  .move-modal-header {
+    padding: 1rem;
+  }
+
+  .move-modal-header h3 {
+    font-size: 1.125rem;
+  }
+
+  .move-modal-body {
+    padding: 1rem;
+    max-height: 250px;
+  }
+
+  .breadcrumb-nav {
+    gap: 0.25rem;
+    font-size: 0.8rem;
+  }
+
+  .breadcrumb-btn {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .folder-list-item {
+    padding: 0.65rem;
+    font-size: 0.875rem;
+  }
+
+  .move-modal-footer {
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+
+  .btn-cancel,
+  .btn-move {
+    padding: 0.65rem 1rem;
+    font-size: 0.875rem;
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .move-modal {
+    width: 100%;
+    border-radius: 0;
+    max-height: 100vh;
+  }
+
+  .move-modal-header,
+  .move-modal-footer {
+    padding: 0.75rem;
+  }
+
+  .move-modal-body {
+    padding: 0.75rem;
+    max-height: 200px;
+  }
+
+  .breadcrumb-nav {
+    font-size: 0.75rem;
+  }
+
+  .folder-list-item {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+}

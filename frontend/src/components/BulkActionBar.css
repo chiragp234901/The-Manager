@@ -1,0 +1,155 @@
+.bulk-action-bar {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  z-index: 100;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.bulk-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.selected-count {
+  font-weight: 600;
+  color: #111827;
+  font-size: 0.875rem;
+}
+
+.clear-selection-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.clear-selection-btn:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.bulk-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bulk-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  transition: all 0.2s;
+}
+
+.bulk-action-btn:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.bulk-action-btn.danger {
+  color: #dc2626;
+}
+
+.bulk-action-btn.danger:hover {
+  background: #fee2e2;
+  border-color: #fecaca;
+}
+
+.bulk-action-btn svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .bulk-action-bar {
+    padding: 1rem;
+    left: 80px;
+  }
+
+  .bulk-action-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .bulk-action-btn span {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .bulk-action-bar {
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 0;
+    flex-wrap: wrap;
+    padding: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .selection-info {
+    width: 100%;
+    font-size: 0.875rem;
+  }
+
+  .bulk-actions {
+    width: 100%;
+    justify-content: space-around;
+    gap: 0.5rem;
+  }
+
+  .bulk-action-btn {
+    flex: 1;
+    min-width: 0;
+    padding: 0.5rem 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bulk-action-bar {
+    padding: 0.5rem;
+  }
+
+  .bulk-action-btn {
+    padding: 0.4rem 0.4rem;
+  }
+
+  .selection-info {
+    font-size: 0.8rem;
+  }
+}

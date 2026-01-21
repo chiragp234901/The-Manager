@@ -1,0 +1,279 @@
+.upload-modal {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.upload-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.upload-modal-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.close-btn:hover {
+  background: #f3f4f6;
+}
+
+.upload-dropzone {
+  margin: 1.5rem;
+  padding: 3rem 2rem;
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: #f9fafb;
+}
+
+.upload-dropzone:hover,
+.upload-dropzone.drag-active {
+  border-color: #3b82f6;
+  background: #eff6ff;
+}
+
+.upload-icon {
+  color: #9ca3af;
+  margin-bottom: 1rem;
+}
+
+.upload-text {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.upload-link {
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+.selected-files {
+  padding: 0 1.5rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.selected-files h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 0.75rem 0;
+}
+
+.file-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.file-item-upload {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: #f9fafb;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.file-icon {
+  color: #6b7280;
+  flex-shrink: 0;
+}
+
+.file-info-upload {
+  flex: 1;
+  min-width: 0;
+}
+
+.file-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #111827;
+  margin: 0 0 0.25rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-size {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.upload-progress-bar {
+  height: 4px;
+  background: #e5e7eb;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.upload-progress-fill {
+  height: 100%;
+  background: #3b82f6;
+  transition: width 0.3s ease;
+}
+
+.remove-file-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ef4444;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.remove-file-btn:hover {
+  background: #fee2e2;
+}
+
+.upload-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.cancel-btn,
+.upload-submit-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.cancel-btn {
+  background: white;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.cancel-btn:hover:not(:disabled) {
+  background: #f9fafb;
+}
+
+.upload-submit-btn {
+  background: #3b82f6;
+  color: white;
+}
+
+.upload-submit-btn:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.cancel-btn:disabled,
+.upload-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .upload-modal {
+    max-width: 90%;
+  }
+
+  .upload-modal-header,
+  .upload-modal-footer {
+    padding: 1rem;
+  }
+
+  .upload-dropzone {
+    margin: 1rem;
+    padding: 2rem 1rem;
+  }
+
+  .upload-dropzone p {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .upload-modal {
+    width: 95%;
+    max-height: 90vh;
+  }
+
+  .upload-modal-header h3 {
+    font-size: 1.125rem;
+  }
+
+  .upload-dropzone {
+    padding: 1.5rem 1rem;
+  }
+
+  .upload-dropzone svg {
+    font-size: 2rem;
+  }
+
+  .upload-dropzone p {
+    font-size: 0.8rem;
+  }
+
+  .file-list-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .file-list-item span {
+    font-size: 0.8rem;
+  }
+
+  .upload-modal-footer {
+    flex-direction: column;
+  }
+
+  .cancel-btn,
+  .upload-submit-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .upload-modal-header,
+  .upload-modal-footer {
+    padding: 0.75rem;
+  }
+
+  .upload-dropzone {
+    margin: 0.75rem;
+    padding: 1rem 0.75rem;
+  }
+}
