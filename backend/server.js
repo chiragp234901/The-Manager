@@ -14,7 +14,8 @@ const app = express(); // Creates an Express Application
 // Middlewares
 app.use(express.json()); // Allows server to read JSON request bodies
 app.use(cookieParser());
-app.use(cors({ origin: "http://localhost:5173", credentials: true })); // Client URL
+// app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({ origin: "https://the-manager-3zui.vercel.app", credentials: true })); // Client URL
 app.use("/uploads", express.static("uploads")); // For uploded files destination
 
 // Routes
