@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const API = "http://localhost:5000/api";
-
+//const API = "http://localhost:5000/api";
+const API = "https://the-manager-pz6x.onrender.com/api";
 const axiosInstance = axios.create({
   baseURL: API,
   withCredentials: true,
