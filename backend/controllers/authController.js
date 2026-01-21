@@ -123,8 +123,10 @@ export const logoutUser = (req, res) => {
   res
     .clearCookie("refreshToken", {
       httpOnly: true,
-      sameSite: "lax",
-      secure: false,
+      //sameSite: "lax",
+        sameSite: "none",
+        //secure: false,
+        secure: true,
     })
     .status(200)
     .json({ message: "Logged out successfully" });
